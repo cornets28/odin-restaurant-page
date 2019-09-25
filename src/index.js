@@ -1,8 +1,7 @@
-import base, { elements } from './base';
-
-import { paragraph } from './about';
-import { gallary } from './menu';
-import { contact } from './contact';
+import elements from './base';
+import paragraph from './about';
+import gallary from './menu';
+import contact from './contact';
 
 const tabs = ['about', 'menu', 'contact'];
 elements.main.appendChild(paragraph);

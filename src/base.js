@@ -40,4 +40,4 @@ const base = (() => {
   elements.content.appendChild(elements.footer);
 })();
 
-export { elements };
+export default { elements, base };

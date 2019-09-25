@@ -19,4 +19,4 @@ gallary.appendChild(food.itemOne);
 gallary.appendChild(food.itemTwo);
 gallary.appendChild(food.itemThree);
 
-export { gallary };
+export default gallary;
