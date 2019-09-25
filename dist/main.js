@@ -86,64 +86,64 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/about.js":
-/*!**********************!*\
-  !*** ./src/about.js ***!
-  \**********************/
-/*! exports provided: paragraph, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"paragraph\", function() { return paragraph; });\nconst paragraph = document.createElement('p');\nparagraph.classList.add('tab__display', 'tab__display--about');\nparagraph.textContent = `La Maison Restaurant International Experience Haitian-inspired dishes with an international flair at La Maison, our famous Port-au-Prince restaurant. La Maison is open daily for breakfast, lunch and dinner.Open for breakfast, lunch and dinner. Dress code: Smart Casual.\n                         La Maison Restaurant International Experience Haitian-inspired dishes with an international flair at La Maison, our famous Port-au-Prince restaurant. La Maison is open daily for breakfast, lunch and dinner.Open for breakfast, lunch and dinner. Dress code: Smart Casual.\n                         La Maison Restaurant International Experience Haitian-inspired dishes with an international flair at La Maison, our famous Port-au-Prince restaurant. La Maison is open daily for breakfast, lunch and dinner.Open for breakfast, lunch and dinner. Dress code: Smart Casual.`;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({ paragraph });\n\n\n//# sourceURL=webpack:///./src/about.js?");
-
-/***/ }),
-
-/***/ "./src/base.js":
-/*!*********************!*\
-  !*** ./src/base.js ***!
-  \*********************/
-/*! exports provided: elements */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"elements\", function() { return elements; });\nconst elements = {\n  content: document.querySelector('.content'),\n  header: document.createElement('header'),\n  headerLogo: document.createElement('div'),\n  img: document.createElement('img'),\n  main: document.createElement('main'),\n  about: document.createElement('div'),\n  menu: document.createElement('div'),\n  contact: document.createElement('div'),\n  footer: document.createElement('footer'),\n  footerSpan: document.createElement('span'),\n};\n\nconst base = (() => {\n  // HEADER\n  elements.header.classList.add('header');\n  elements.headerLogo.classList.add('header__logo');\n  elements.img.src = 'dist/images/logo.png';\n  elements.headerLogo.appendChild(elements.img);\n  elements.header.appendChild(elements.headerLogo);\n  elements.content.appendChild(elements.header);\n\n  // / MAIN\n  elements.main.classList.add('main');\n  elements.about.classList.add('tab', 'tab__about');\n  elements.about.textContent = 'about';\n  elements.menu.classList.add('tab', 'tab__menu');\n  elements.menu.textContent = 'menu';\n  elements.contact.classList.add('tab', 'tab__contact');\n  elements.contact.textContent = 'contact';\n  elements.main.appendChild(elements.about);\n  elements.main.appendChild(elements.menu);\n  elements.main.appendChild(elements.contact);\n  elements.content.appendChild(elements.main);\n\n  // / FOOTER\n  elements.footer.classList.add('footer');\n  elements.footerSpan.textContent = ' Restaurant Lakay ';\n  elements.footer.appendChild(elements.footerSpan);\n  elements.content.appendChild(elements.footer);\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/base.js?");
-
-/***/ }),
-
 /***/ "./src/contact.js":
 /*!************************!*\
   !*** ./src/contact.js ***!
   \************************/
-/*! exports provided: contact */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"contact\", function() { return contact; });\nconst contact = document.createElement('p');\ncontact.classList.add('tab__display', 'tab__display--about');\ncontact.textContent = 'Vontact us via email on gddgd@gmail.com of by phone on : 484646464';\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/contact.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base */ \"./src/base.js\");\n/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./about */ \"./src/about.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\n\n\nconst tabs = ['about', 'menu', 'contact'];\n_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.appendChild(_about__WEBPACK_IMPORTED_MODULE_1__[\"paragraph\"]);\n\n\nconst activeState = (tab) => {\n  for (const key of tabs) {\n    _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"][key].classList.remove('activeState');\n  }\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"][tab].classList.add('activeState');\n};\n\nconst loadAbout = () => {\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.removeChild(_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.lastChild);\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.appendChild(_about__WEBPACK_IMPORTED_MODULE_1__[\"paragraph\"]);\n  activeState('about');\n};\n\nconst loadMenu = () => {\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.removeChild(_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.lastChild);\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.appendChild(_menu__WEBPACK_IMPORTED_MODULE_2__[\"gallary\"]);\n  activeState('menu');\n};\n\nconst loadContact = () => {\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.removeChild(_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.lastChild);\n  _base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].main.appendChild(_contact__WEBPACK_IMPORTED_MODULE_3__[\"contact\"]);\n  activeState('contact');\n};\n\nloadAbout();\n\n_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].about.addEventListener('click', loadAbout);\n_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].menu.addEventListener('click', loadMenu);\n_base__WEBPACK_IMPORTED_MODULE_0__[\"elements\"].contact.addEventListener('click', loadContact);\n\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/menu.js":
-/*!*********************!*\
-  !*** ./src/menu.js ***!
-  \*********************/
-/*! exports provided: gallary */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"gallary\", function() { return gallary; });\nconst food = {\n  itemOne: document.createElement('img'),\n  itemTwo: document.createElement('img'),\n  itemThree: document.createElement('img'),\n};\n\nfood.itemOne.src = 'dist/images/food5.jpg';\nfood.itemTwo.src = 'dist/images/food2.jpg';\nfood.itemThree.src = 'dist/images/food4.jpg';\n\nfood.itemOne.classList.add('meal-1', 'the-food');\nfood.itemTwo.classList.add('meal-2', 'the-food');\nfood.itemThree.classList.add('meal-3', 'the-food');\n\nconst gallary = document.createElement('div');\ngallary.classList.add('tab__display', 'tab__display--menu');\n\ngallary.appendChild(food.itemOne);\ngallary.appendChild(food.itemTwo);\ngallary.appendChild(food.itemThree);\n\n\n\n\n//# sourceURL=webpack:///./src/menu.js?");
-
-/***/ })
-
-/******/ });
+  "use strict";
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\n\nconst contact= ()=> {\n  document.getElementById('menu').classList.remove('selected');\n  document.getElementById('contact').classList.add('selected');\n\n  const tabContent = document.getElementById('tab-content');\n  tabContent.classList.remove('menu-continer');\n\n  tabContent.innerHTML = '';\n  const form = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('form');\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('label', 'Email:'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('input'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('label', 'Name:'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('input'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('label', 'title:'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('input'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('label', 'Content:'));\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('textarea'));\n  const submitButton = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('input');\n  submitButton.setAttribute('value', 'submit');\n  submitButton.setAttribute('type', 'submit');\n  form.appendChild(submitButton);\n  tabContent.append(form);\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (contact);\n\n\n//# sourceURL=webpack:///./src/contact.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/helpers.js":
+  /*!************************!*\
+    !*** ./src/helpers.js ***!
+    \************************/
+  /*! exports provided: default */
+  /***/ (function(module, __webpack_exports__, __webpack_require__) {
+  
+  "use strict";
+  eval("__webpack_require__.r(__webpack_exports__);\nfunction createElement(type, value = null) {\n  const node = document.createElement(type);\n  if (value !== null) {\n    const textNode = document.createTextNode(value);\n    node.appendChild(textNode);\n  }\n  return node;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (createElement);\n\n\n//# sourceURL=webpack:///./src/helpers.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/index.js":
+  /*!**********************!*\
+    !*** ./src/index.js ***!
+    \**********************/
+  /*! no exports provided */
+  /***/ (function(module, __webpack_exports__, __webpack_require__) {
+  
+  "use strict";
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _initial_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial-page-load */ \"./src/initial-page-load.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\nObject(_initial_page_load__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\ndocument.getElementById('menu').addEventListener('click', () => Object(_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])());\ndocument.getElementById('contact').addEventListener('click', () => Object(_contact__WEBPACK_IMPORTED_MODULE_2__[\"default\"])());\n\n\n//# sourceURL=webpack:///./src/index.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/initial-page-load.js":
+  /*!**********************************!*\
+    !*** ./src/initial-page-load.js ***!
+    \**********************************/
+  /*! exports provided: default */
+  /***/ (function(module, __webpack_exports__, __webpack_require__) {
+  
+  "use strict";
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\n\nconst initlizePage = () => {\n  const root = document.getElementById('content');\n\n  root.innerHTML = '';\n  const h1Node = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('h1', 'Welcome to the restaurant page !');\n\n  const navbarElements = ['menu', 'contact'];\n  const navbarElementsIDs = ['menu', 'contact'];\n\n  const ulNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('ul');\n\n  navbarElements.forEach((text, index) => {\n    const liNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('li', text);\n    liNode.setAttribute('id', navbarElementsIDs[index]);\n    ulNode.appendChild(liNode);\n  });\n\n  ulNode.classList.add('navbar');\n\n  const divNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('div');\n  divNode.setAttribute('id', 'tab-content');\n\n  root.appendChild(h1Node);\n  root.appendChild(ulNode);\n  root.appendChild(divNode);\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (initlizePage);\n\n//# sourceURL=webpack:///./src/initial-page-load.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/menu.js":
+  /*!*********************!*\
+    !*** ./src/menu.js ***!
+    \*********************/
+  /*! exports provided: default */
+  /***/ (function(module, __webpack_exports__, __webpack_require__) {
+  
+  "use strict";
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\n\nconst menuItems = {\n  'main dishes': {\n    items: {\n      'Dish name 1': 10,\n      'Dish name 2': 10,\n      'Dish name 3': 10,\n      'Dish name 4': 10,\n      'Dish name 5': 10,\n      'Dish name 6': 10,\n      'Dish name 7': 10,\n      'Dish name 8': 10,\n    },\n  },\n  Sides: {\n    items: {\n      'Dish name 1': 10,\n      'Dish name 2': 10,\n      'Dish name 3': 10,\n      'Dish name 4': 10,\n      'Dish name 5': 10,\n      'Dish name 6': 10,\n      'Dish name 7': 10,\n      'Dish name 8': 10,\n    },\n  },\n  Drinks: {\n    items: {\n      'Dish name 1': 10,\n      'Dish name 2': 10,\n      'Dish name 3': 10,\n      'Dish name 4': 10,\n      'Dish name 5': 10,\n      'Dish name 6': 10,\n      'Dish name 7': 10,\n      'Dish name 8': 10,\n    },\n  },\n  Desserts: {\n    items: {\n      'Dish name 1': 10,\n      'Dish name 2': 10,\n      'Dish name 3': 10,\n      'Dish name 4': 10,\n      'Dish name 5': 10,\n      'Dish name 6': 10,\n      'Dish name 7': 10,\n      'Dish name 8': 10,\n    },\n  },\n};\n\nconst menu=()=> {\n  document.getElementById('menu').classList.add('selected');\n  document.getElementById('contact').classList.remove('selected');\n\n  const tabContent = document.getElementById('tab-content');\n  tabContent.classList.add('menu-continer');\n\n  tabContent.innerHTML = '';\n  Object.keys(menuItems).forEach((subListe) => {\n    const ulNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('ul');\n    ulNode.setAttribute('class', 'menuList');\n    ulNode.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('li', subListe));\n    Object.keys(menuItems[subListe].items).forEach(\n      (item) => {\n        ulNode.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('li', `${item} : $ ${menuItems[subListe].items[item]}`));\n      },\n    );\n    tabContent.appendChild(ulNode);\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (menu);\n\n\n//# sourceURL=webpack:///./src/menu.js?");
+  
+  /***/ })
+  
+  /******/ });
