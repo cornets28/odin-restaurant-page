@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 62.5%;
+  background-color: whitesmoke;
+  font-family: "Noto Sans HK", sans-serif; }
+
+.content {
+  height: 100vh; }
+
+.header {
+  width: 100vw;
+  height: 20vh;
+  background-color: rgb(50, 50, 116);;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .header__logo {
+    position: relative;
+    width: 8rem; }
+    .header__logo::before {
+      content: "Restaurant";
+      position: absolute;
+      top: 25%;
+      left: -255%;
+      font-size: 4rem;
+      color: white;
+      animation: fromLeftToRight 1s ease; }
+    .header__logo::after {
+      content: "      Lakay";
+      position: absolute;
+      top: 25%;
+      right: -138%;
+      font-size: 4rem;
+      color: white;
+      animation: fromRightToLeft 1s ease; }
+  .header img {
+    width: 100%; }
+
+.main {
+  position: relative;
+  height: 70vh;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: rgba(133, 42, 34, 0.65);
+  display: grid;
+  grid-template-areas: "about menu contact . . ." "content content content content content content" "content content content content content content" "content content content content content content";
+  place-items: center;
+  grid-template-columns: min-content min-content min-content;
+  grid-template-rows: min-content; }
+  .main::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* background-image: url(img/background.jpg); */
+    filter: blur(2px); }
+  .main .tab {
+    font-size: 1.5rem;
+    padding: 0.5rem 11.5rem;
+    text-transform: uppercase;
+    color: #262322;
+    border: 1px solid #262322;
+    background-color: #f54d0a; }
+    .main .tab:hover {
+      cursor: pointer;
+      background-color: #262322;
+      color: #f04f0f;
+      border: 1px solid #5174b6; }
+    .main .tab__about {
+      grid-area: about; }
+    .main .tab__menu {
+      grid-area: menu; }
+    .main .tab__contact {
+      grid-area: contact; }
+    .main .tab__display {
+      grid-area: content; }
+    .main .tab__display--about {
+      width: 60%;
+      justify-self: start;
+      margin-left: 14rem;
+      color: white;
+      font-size: 1rem;
+      font-family: "Prata", serif;
+      /* letter-spacing: 3px; */
+      line-height: 1.8; }
+    .main .tab__display--menu {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly; }
+      .main .tab__display--menu img {
+        width: 22rem;
+        border: 2px solid black; }
+        .main .tab__display--menu img:hover {
+          background: black; }
+  .main .meal-1 {
+    position: relative; }
+
+.footer {
+  height: 10vh;
+  width: 100vw;
+  background: rgb(50, 50, 116);
+  display: flex;
+  align-items: center; }
+  .footer span {
+    color: white;
+    font-size: medium;
+    margin-left: 39rem; }
+
+@keyframes fromLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes fromRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.activeState {
+  background-color: #262322 !important;
+  color: #e95317 !important;
+  border-bottom: 2px solid #f54d0a !important; }
