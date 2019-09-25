@@ -5,4 +5,5 @@ files:
     ignore:
         - 'dist/*'
         - '.eslintrc.js'
+        - 'src/index.js'
         - 'webpack.config.js'
